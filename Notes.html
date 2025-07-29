@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Courses - EarnSmartPK</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f9f9f9;
+      color: #111;
+      transition: background 0.3s, color 0.3s;
+    }
+    .dark-mode {
+      background-color: #121212;
+      color: #f5f5f5;
+    }
+
+    /* Navbar */
+    nav {
+      background: #0a192f;
+      padding: 15px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    nav .logo {
+      font-size: 22px;
+      font-weight: bold;
+      color: white;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: white;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: #00c9a7;
+    }
+
+.toggle-btn {
+  padding: 8px 15px; /* smaller size like before */
+  background: linear-gradient(to right, #00d4b3, #00c3f7);
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s;
+  font-size: 14px; /* smaller font */
+}
+
+.toggle-btn:hover {
+  background: linear-gradient(to right, #00bfa6, #0099f7);
+}
+
+    .dark-mode nav {
+      background: #0a192f;
+    }
+
+    /* Header Title Animation */
+    .section-title {
+      text-align: center;
+      font-size: 2.4em;
+      margin-top: 40px;
+      position: relative;
+      display: inline-block;
+      color: #00bfa6;
+      animation: fadeInUp 1s ease-out;
+    }
+
+   .section-title::after {
+  content: "";
+  position: absolute;
+  width: 100px;
+  height: 6px;
+  border-radius: 4px;
+  background: linear-gradient(to right, #00d4b3, #00c3f7);
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -10px;
+  transition: width 0.3s ease;
+}
+
+    .section-title:hover::after {
+      width: 160px;
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Course Cards */
+    .course-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      padding: 40px 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .course-card {
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      overflow: hidden;
+      transition: transform 0.2s;
+    }
+
+    .dark-mode .course-card {
+      background: #1f1f1f;
+    }
+
+    .course-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .course-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .course-content {
+      padding: 15px;
+    }
+
+    .course-content h3 {
+      margin-bottom: 10px;
+      color: #00bfa6;
+    }
+
+    .dark-mode .course-content h3 {
+      color: #4fc3f7;
+    }
+
+    .course-content p {
+      margin-bottom: 10px;
+    }
+
+    .buy-btn {
+      display: inline-block;
+      padding: 10px 15px;
+      background: #00bfa6;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+
+    .buy-btn:hover {
+      background: #009e8e;
+    }
+
+
+
+
+  footer {
+    background: #0a192f;
+    color: #fff;
+    padding: 30px 0;
+    text-align: center;
+  }
+
+
+ body {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+        main {
+      flex: 1;
+    }
+
+    .dark-mode footer {
+      background: #0a192f;
+    }
+
+.course-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  padding: 2rem;
+}
+
+.course-card {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.course-card:hover {
+  transform: translateY(-5px);
+}
+
+.course-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.course-content {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-grow: 1;
+}
+
+.course-content h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.course-content p {
+  margin-bottom: 0.5rem;
+}
+
+.hidden {
+  display: none;
+}
+
+.button-group {
+  display: flex;
+  justify-content: space-between;
+  margin-top: auto;
+  gap: 10px;
+}
+
+.read-more-btn,
+.buy-btn {
+  flex: 1;
+  padding: 8px 12px;
+  text-align: center;
+  font-size: 14px;
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  color: white;
+  cursor: pointer;
+}
+
+.read-more-btn {
+  background-color: #00b894;
+}
+
+.buy-btn {
+  background-color: #0984e3;
+}
+
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav>
+    <div class="logo">EarnSmartPK</div>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="Blog.html">Blog</a></li>
+    <li><a href="Services.html">Services</a></li>
+    <li><a href="Courses.html">Courses</a></li>
+    <li><a href="Notes.html">Notes</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+    <button class="toggle-btn" onclick="toggleDarkMode()">Dark Mode</button>
+  </nav>
+
+  <!-- Section Title -->
+  <div style="text-align: center;">
+    <h1 class="section-title">Our Notes and Guides</h1>
+  </div>
+
+  <section class="course-container">
+  <div class="course-card">
+    <img src="./images/pic12.jpg" alt="Python Course">
+    <div class="course-content">
+      <h3>Python Programming Notes</h3>
+      <p class="short-text">Master Python from beginner to advanced level with real examples.</p>
+      <p class="full-text hidden">These notes simplify tough programming concepts into clear, student-friendly language. Ideal for beginners and exam prep. All topics are well-organized and budget-friendly—perfect for learning without spending much!</p>
+      <div class="button-group">
+        <button class="read-more-btn" onclick="toggleText(this)">Read More</button>
+        <a href="contact.html" class="buy-btn">Buy Notes</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="course-card">
+    <img src="./images/pic13.jpg" alt="OOP Course">
+    <div class="course-content">
+      <h3>Object-Oriented Programming (OOP)</h3>
+      <p class="short-text">Understand key OOP concepts with practical illustrations.</p>
+      <p class="full-text hidden">The notes cover all topics like classes, objects, inheritance, and polymorphism in a clear and concise manner. They’re affordable and tailored to help you score well in exams and build strong coding logic.</p>
+      <div class="button-group">
+        <button class="read-more-btn" onclick="toggleText(this)">Read More</button>
+        <a href="contact.html" class="buy-btn">Buy Notes</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="course-card">
+    <img src="./images/pic14.jpeg" alt="DSA Course">
+    <div class="course-content">
+      <h3>Data Structures & Algorithms (DSA)</h3>
+      <p class="short-text">Boost your logic building and problem-solving ability.</p>
+      <p class="full-text hidden">Learn sorting, searching, stacks, queues and more in an easy-to-understand format. These notes are perfect for coding interviews and competitive exams—plus, they’re priced very reasonably for students.</p>
+      <div class="button-group">
+        <button class="read-more-btn" onclick="toggleText(this)">Read More</button>
+        <a href="contact.html" class="buy-btn">Buy Notes</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="course-card">
+    <img src="./images/pic15.png" alt="DBMS Course">
+    <div class="course-content">
+      <h3>Database Management System (DBMS)</h3>
+      <p class="short-text">Everything from ER diagrams to SQL covered in detail.</p>
+      <p class="full-text hidden">These notes simplify complex database concepts with real-life examples and diagrams. They’re especially useful for quick revision and offer incredible value at a low price point.</p>
+      <div class="button-group">
+        <button class="read-more-btn" onclick="toggleText(this)">Read More</button>
+        <a href="contact.html" class="buy-btn">Buy Notes</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="course-card">
+    <img src="./images/pic16.jpeg" alt="AI Course">
+    <div class="course-content">
+      <h3>Artificial Intelligence (AI)</h3>
+      <p class="short-text">Explore the basics of AI with practical use cases.</p>
+      <p class="full-text hidden">Notes include beginner-friendly explanations of AI, machine learning, and real-world applications. Clear concepts at an affordable rate make these a smart choice for every CS student.</p>
+      <div class="button-group">
+        <button class="read-more-btn" onclick="toggleText(this)">Read More</button>
+        <a href="contact.html" class="buy-btn">Buy Notes</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="course-card">
+    <img src="./images/pic17.jpg" alt="DAA Course">
+    <div class="course-content">
+      <h3>Design & Analysis of Algorithm (DAA)</h3>
+      <p class="short-text">Break down complex problems using effective strategies.</p>
+      <p class="full-text hidden">This note set explains greedy algorithms, dynamic programming, and divide & conquer in a super clear way. Designed to help you understand and crack technical interviews—without breaking your budget.</p>
+      <div class="button-group">
+        <button class="read-more-btn" onclick="toggleText(this)">Read More</button>
+        <a href="contact.html" class="buy-btn">Buy Notes</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+  <footer>
+    <p>&copy; 2025 EarnSmartPK. All rights reserved.</p>
+  </footer>
+
+  <script>
+    function toggleDarkMode() {
+      document.body.classList.toggle("dark-mode");
+    }
+  </script>
+
+  <script>
+  function toggleDarkMode() {
+    document.body.classList.toggle("dark-mode");
+
+    const btn = document.querySelector(".toggle-btn");
+    if (document.body.classList.contains("dark-mode")) {
+      btn.textContent = "Light Mode";
+    } else {
+      btn.textContent = "Dark Mode";
+    }
+  }
+</script>
+
+
+<script>
+  function toggleText(button) {
+    const fullText = button.parentElement.previousElementSibling;
+    if (fullText.classList.contains('hidden')) {
+      fullText.classList.remove('hidden');
+      button.textContent = "Read Less";
+    } else {
+      fullText.classList.add('hidden');
+      button.textContent = "Read More";
+    }
+  }
+</script>
+
+
+</body>
+</html>

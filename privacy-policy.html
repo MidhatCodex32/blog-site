@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Privacy Policy - EarnSmartPK</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Inter', sans-serif;
+    }
+
+    body {
+      background-color: #f5f7fa;
+      color: #333;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    /* Navbar */
+    nav {
+      background-color: #0e1d36;
+      padding: 1rem 2rem;
+    }
+
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      color: white;
+      font-size: 1.4rem;
+      font-weight: bold;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+    }
+
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: #00bfa6;
+    }
+
+    .nav-toggle button {
+      background: linear-gradient(to right, #00d4b3, #00c3f7);
+      border: none;
+      color: white;
+      font-weight: bold;
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .nav-toggle button:hover {
+      opacity: 0.9;
+    }
+
+    /* Privacy Content */
+    .privacy-container {
+      max-width: 900px;
+      margin: 50px auto;
+      background: #fff;
+      padding: 40px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+    }
+
+    .privacy-container h1 {
+      font-size: 2rem;
+      color: #00bfa6;
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .section-title {
+      font-size: 1.4rem;
+      color: #0e1d36;
+      margin-top: 30px;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .privacy-container p {
+      font-size: 16px;
+      line-height: 1.7;
+      margin-bottom: 15px;
+      color: #555;
+    }
+
+    .privacy-container ul {
+      margin: 10px 0 20px 25px;
+    }
+
+    .privacy-container li {
+      margin-bottom: 8px;
+      color: #555;
+    }
+
+    /* SVG icons */
+    .icon {
+      width: 20px;
+      height: 20px;
+      fill: #00bfa6;
+      flex-shrink: 0;
+    }
+
+    /* Footer */
+    footer {
+      background-color: #0e1d36;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      font-size: 16px;
+      margin-top: auto;
+    }
+
+    /* Dark Mode */
+    body.dark-mode {
+      background-color: #121212;
+      color: #e0e0e0;
+    }
+
+    body.dark-mode nav {
+      background-color: #0a192f;
+    }
+
+    body.dark-mode .logo {
+      color: #fff;
+    }
+
+    body.dark-mode .nav-links a {
+      color: #e0e0e0;
+    }
+
+    body.dark-mode .nav-links a:hover {
+      color: #00c9a7;
+    }
+
+    body.dark-mode .privacy-container {
+      background-color: #1e1e1e;
+      color: #ccc;
+      box-shadow: 0 4px 8px rgba(255, 255, 255, 0.05);
+    }
+
+    body.dark-mode .section-title {
+      color: #e0e0e0;
+    }
+
+    body.dark-mode .privacy-container p,
+    body.dark-mode .privacy-container li {
+      color: #ccc;
+    }
+
+    body.dark-mode footer {
+      background-color: #0a192f;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Navbar -->
+  <nav>
+    <div class="nav-container">
+      <div class="logo">EarnSmartPK</div>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="Blog.html">Blog</a>
+        <a href="services.html">Services</a>
+        <a href="Courses.html">Courses</a>
+        <a href="Notes.html">Notes</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="nav-toggle">
+        <button onclick="toggleDarkMode()">Dark Mode</button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Privacy Policy -->
+  <div class="privacy-container">
+    <h1>
+      <svg class="icon" viewBox="0 0 24 24">
+        <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/>
+      </svg>
+      Privacy Policy
+    </h1>
+
+    <p>Your privacy matters to us at EarnSmartPK. This Privacy Policy explains how we collect, use, and safeguard your information when you interact with our website.</p>
+
+    <h2 class="section-title">
+      <svg class="icon" viewBox="0 0 24 24">
+        <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+      </svg>
+      Information We Collect
+    </h2>
+    <p>We may collect the following types of information:</p>
+    <ul>
+      <li>Personal details (name, email address, contact number).</li>
+      <li>Technical information (IP address, browser type, pages visited).</li>
+      <li>Data provided when filling forms or subscribing to newsletters.</li>
+    </ul>
+
+    <h2 class="section-title">
+      <svg class="icon" viewBox="0 0 24 24">
+        <path d="M3 6h18v2H3V6zm0 5h18v2H3v-2zm0 5h18v2H3v-2z"/>
+      </svg>
+      How We Use Your Data
+    </h2>
+    <p>Your information is used to:</p>
+    <ul>
+      <li>Provide and maintain our services.</li>
+      <li>Improve website performance and user experience.</li>
+      <li>Send updates, newsletters, or respond to inquiries.</li>
+      <li>Ensure website security and prevent misuse.</li>
+    </ul>
+
+    <h2 class="section-title">
+      <svg class="icon" viewBox="0 0 24 24">
+        <path d="M12 17a2 2 0 100-4 2 2 0 000 4zm0-14a7 7 0 00-7 7c0 3.53 2.61 6.43 6 6.92V21h2v-4.08c3.39-.49 6-3.39 6-6.92a7 7 0 00-7-7z"/>
+      </svg>
+      Data Security
+    </h2>
+    <p>We use industry-standard measures to protect your personal data from unauthorized access, alteration, or disclosure.</p>
+
+    <h2 class="section-title">
+      <svg class="icon" viewBox="0 0 24 24">
+        <path d="M12 22c5.52 0 10-4.48 10-10S17.52 2 12 2 2 6.48 2 12s4.48 10 10 10zm0-2a8 8 0 100-16 8 8 0 000 16z"/>
+      </svg>
+      Contact Us
+    </h2>
+    <p>If you have questions about our Privacy Policy, contact us at: <strong>support@earnsmartpk.com</strong>.</p>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 EarnSmartPK. All rights reserved.</p>
+  </footer>
+
+  <script>
+    function toggleDarkMode() {
+      document.body.classList.toggle("dark-mode");
+      const btn = document.querySelector(".nav-toggle button");
+      btn.textContent = document.body.classList.contains("dark-mode") ? "Light Mode" : "Dark Mode";
+    }
+  </script>
+</body>
+</html>

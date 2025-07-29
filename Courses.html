@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Courses - EarnSmartPK</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f9f9f9;
+      color: #111;
+      transition: background 0.3s, color 0.3s;
+    }
+    .dark-mode {
+      background-color: #121212;
+      color: #f5f5f5;
+    }
+
+    /* Navbar */
+    nav {
+      background: #0a192f;
+      padding: 15px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    nav .logo {
+      font-size: 22px;
+      font-weight: bold;
+      color: white;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: white;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: #00c9a7;
+    }
+
+.toggle-btn {
+  padding: 8px 15px; /* smaller size like before */
+  background: linear-gradient(to right, #00d4b3, #00c3f7);
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s;
+  font-size: 14px; /* smaller font */
+}
+
+.toggle-btn:hover {
+  background: linear-gradient(to right, #00bfa6, #0099f7);
+}
+
+    .dark-mode nav {
+      background: #0a192f;
+    }
+
+    /* Header Title Animation */
+    .section-title {
+      text-align: center;
+      font-size: 2.4em;
+      margin-top: 40px;
+      position: relative;
+      display: inline-block;
+      color: #00bfa6;
+      animation: fadeInUp 1s ease-out;
+    }
+
+   .section-title::after {
+  content: "";
+  position: absolute;
+  width: 100px;
+  height: 6px;
+  border-radius: 4px;
+  background: linear-gradient(to right, #00d4b3, #00c3f7);
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -10px;
+  transition: width 0.3s ease;
+}
+
+    .section-title:hover::after {
+      width: 160px;
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Course Cards */
+    .course-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      padding: 40px 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .course-card {
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      overflow: hidden;
+      transition: transform 0.2s;
+    }
+
+    .dark-mode .course-card {
+      background: #1f1f1f;
+    }
+
+    .course-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .course-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .course-content {
+      padding: 15px;
+    }
+
+    .course-content h3 {
+      margin-bottom: 10px;
+      color: #00bfa6;
+    }
+
+    .dark-mode .course-content h3 {
+      color: #4fc3f7;
+    }
+
+    .course-content p {
+      margin-bottom: 10px;
+    }
+
+    .buy-btn {
+      display: inline-block;
+      padding: 10px 15px;
+      background: #00bfa6;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+
+    .buy-btn:hover {
+      background: #009e8e;
+    }
+
+
+  footer {
+    background: #0a192f;
+    color: #fff;
+    padding: 30px 0;
+    text-align: center;
+  }
+
+
+ body {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+        main {
+      flex: 1;
+    }
+
+    .dark-mode footer {
+      background: #0a192f;
+    }
+
+
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav>
+    <div class="logo">EarnSmartPK</div>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="Blog.html">Blog</a></li>
+    <li><a href="Services.html">Services</a></li>
+    <li><a href="Courses.html">Courses</a></li>
+    <li><a href="Notes.html">Notes</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+    <button class="toggle-btn" onclick="toggleDarkMode()">Dark Mode</button>
+  </nav>
+
+  <!-- Section Title -->
+  <div style="text-align: center;">
+    <h1 class="section-title">Our Paid Courses</h1>
+  </div>
+
+  <section class="course-container">
+    <div class="course-card">
+      <img src="./images/pic6.jpg" alt="PHP Course">
+      <div class="course-content">
+        <h3>PHP</h3>
+        <p>Learn how to get your first Fiverr orders and grow your freelance business.</p>
+        <a href="contact.html" class="buy-btn">Buy Course</a>
+      </div>
+    </div>
+
+    <div class="course-card">
+      <img src="./images/pic7.png" alt="Blogging Course">
+      <div class="course-content">
+        <h3>Blogging Mastery</h3>
+        <p>Create, grow, and monetize your blog professionally in 2025.</p>
+        <a href="contact.html" class="buy-btn">Buy Course</a>
+      </div>
+    </div>
+
+    <div class="course-card">
+      <img src="./images/pic8.png" alt="Frontend Course">
+      <div class="course-content">
+        <h3>Frontend Development</h3>
+        <p>Master HTML, CSS, JavaScript and build beautiful websites.</p>
+        <a href="contact.html" class="buy-btn">Buy Course</a>
+      </div>
+    </div>
+
+    <div class="course-card">
+      <img src="./images/pic9.png" alt="Backend Course">
+      <div class="course-content">
+        <h3>Backend Development</h3>
+        <p>Learn PHP, databases, server-side scripting and real projects.</p>
+        <a href="contact.html" class="buy-btn">Buy Course</a>
+      </div>
+    </div>
+
+    <div class="course-card">
+      <img src="./images/pic10.jpg" alt="WordPress Course">
+      <div class="course-content">
+        <h3>WordPress Mastery</h3>
+        <p>Create sites using WordPress, from themes to SEO tools.</p>
+        <a href="contact.html" class="buy-btn">Buy Course</a>
+      </div>
+    </div>
+
+    <div class="course-card">
+      <img src="./images/pic11.jpg" alt="Python Course">
+      <div class="course-content">
+        <h3>Python Programming</h3>
+        <p>Start coding in Python, build small tools and projects from scratch.</p>
+        <a href="contact.html" class="buy-btn">Buy Course</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 EarnSmartPK. All rights reserved.</p>
+  </footer>
+
+  <script>
+    function toggleDarkMode() {
+      document.body.classList.toggle("dark-mode");
+    }
+  </script>
+
+  <script>
+  function toggleDarkMode() {
+    document.body.classList.toggle("dark-mode");
+
+    const btn = document.querySelector(".toggle-btn");
+    if (document.body.classList.contains("dark-mode")) {
+      btn.textContent = "Light Mode";
+    } else {
+      btn.textContent = "Dark Mode";
+    }
+  }
+</script>
+
+</body>
+</html>

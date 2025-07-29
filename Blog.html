@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EarnSmartPK - Blog</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Inter', sans-serif;
+    }
+
+    body {
+      background-color: #e9f9f6;
+      color: #333;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    .dark-mode {
+      background-color: #1a1a1a;
+      color: #eee;
+    }
+
+    .dark-mode .blog-box {
+      background-color: #2c2c2c;
+      color: #eee;
+    }
+
+    .dark-mode .toggle-btn {
+      background-color: #00c9a7;
+      color: white;
+    }
+
+    /* ✅ Navbar (New) */
+    nav {
+      background-color: #0e1d36;
+      padding: 1rem 2rem;
+    }
+
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      color: white;
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+    }
+
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: #00c9a7;
+    }
+
+    .nav-toggle {
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    .toggle-btn {
+      background: linear-gradient(to right, #00d4b3, #00c3f7);
+      border: none;
+      color: white;
+      font-weight: bold;
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    @media (max-width: 768px) {
+      .nav-container {
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+
+    .blog-box {
+      background-color: white;
+      margin-bottom: 1.5rem;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+      cursor: pointer;
+    }
+
+    .blog-box:hover {
+      transform: scale(1.01);
+    }
+
+    .blog-box img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+    }
+
+    .blog-content {
+      padding: 1.5rem;
+    }
+
+    .blog-content h2 {
+      margin-bottom: 0.5rem;
+    }
+
+    .blog-content p.full-text {
+      display: none;
+      margin-top: 1rem;
+    }
+
+    .blog-content button {
+      margin-top: 1rem;
+      padding: 0.4rem 1rem;
+      background-color: #00c9a7;
+      border: none;
+      color: white;
+      font-weight: bold;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .blog-content button:hover {
+      background-color: #00b398;
+    }
+
+
+footer {
+  
+  background: #0a192f;
+  color: #fff;
+  padding: 30px 0;
+  text-align: center;
+ 
+  margin-top: auto;
+}
+
+    .dark-mode footer {
+      background: #0a192f;
+      width: 100%;
+    }
+
+    .blog-box img {
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+      display: block;
+      margin: 0 auto;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ✅ New Navbar -->
+  <nav>
+    <div class="nav-container">
+      <div class="logo">EarnSmartPK</div>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="Blog.html">Blog</a>
+        <a href="services.html">Services</a>
+        <a href="Courses.html">Courses</a>
+        <a href="Notes.html">Notes</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="nav-toggle">
+        <button class="toggle-btn" onclick="toggleDarkMode()">Dark Mode</button>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container">
+    <div class="blog-box" onclick="toggleBlog(this)">
+      <img src="./images/pic3.jpg" alt="Freelancing">
+      <div class="blog-content">
+        <h2>How to Start Freelancing in Pakistan</h2>
+        <p>Learn the steps to kickstart your freelance career...</p>
+        <p class="full-text">Freelancing in Pakistan is booming. Platforms like Fiverr, Upwork, and PeoplePerHour are enabling thousands of Pakistanis to work from home and earn in dollars. You'll need skills like writing, design, programming or SEO. Learn how to create a profile, get your first client, and maintain a 5-star rating!</p>
+        <button onclick="event.stopPropagation(); toggleText(this)">Read More</button>
+      </div>
+    </div>
+ 
+
+
+    <div class="blog-box" onclick="toggleBlog(this)">
+      <img src="./images/pic5.jpg" alt="Affiliate Marketing">
+      <div class="blog-content">
+        <h2>Affiliate Marketing: Earn While You Sleep</h2>
+        <p>Discover passive income through affiliate programs...</p>
+        <p class="full-text">Affiliate marketing is about promoting others' products and earning a commission for every sale. With proper strategy, content, and audience, you can build a long-term income stream. Use programs like Amazon Associates, Digistore24, or Daraz Affiliate to get started.</p>
+        <button onclick="event.stopPropagation(); toggleText(this)">Read More</button>
+      </div>
+    </div>
+
+    <div class="blog-box" onclick="toggleBlog(this)">
+      <img src="./images/pic4.jpg" alt="Earning Apps">
+      <div class="blog-content">
+        <h2>10 Trusted Earning Apps in Pakistan</h2>
+        <p>Verified apps that really pay and how to use them effectively...</p>
+        <p class="full-text">There are multiple apps like SnackVideo, ClipClaps, and Daraz Wallet that pay for different tasks like watching videos, referrals, and more. Always check reviews before using an app.</p>
+        <button onclick="event.stopPropagation(); toggleText(this)">Read More</button>
+      </div>
+    </div>
+</div>
+    <footer>
+    <p>&copy; 2025 EarnSmartPK. All rights reserved.</p>
+  </footer>
+
+  <script>
+    function toggleDarkMode() {
+      document.body.classList.toggle("dark-mode");
+      const btn = document.querySelector(".toggle-btn");
+      btn.textContent = document.body.classList.contains("dark-mode") ? "Light Mode" : "Dark Mode";
+    }
+
+    function toggleBlog(element) {
+      element.classList.toggle('active');
+    }
+
+    function toggleText(button) {
+      const fullText = button.previousElementSibling;
+      fullText.style.display = fullText.style.display === 'block' ? 'none' : 'block';
+      button.textContent = button.textContent === 'Read More' ? 'Read Less' : 'Read More';
+    }
+
+    
+  </script>
+
+
+
+</body>
+
+</html>

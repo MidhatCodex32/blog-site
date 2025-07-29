@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Online Income in Pakistan - EarnSmartPK</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
+  body { font-family: 'Segoe UI', sans-serif; background: #f9f9f9; color: #333; }
+  a { text-decoration: none; color: inherit; }
+  .container { width: 90%; max-width: 1100px; margin: auto; }
+
+  header {
+    background: #0a192f;
+    padding: 20px 0;
+    color: #fff;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+
+  .nav { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; }
+  .logo { font-size: 1.8rem; font-weight: bold; }
+  nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    transition: max-height 0.4s ease-in-out;
+  }
+  nav ul li a { color: #fff; font-weight: 500; }
+
+  .menu-toggle {
+    display: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+
+  .hero {
+    background: #00b894;
+    color: #fff;
+    padding: 60px 0;
+    text-align: center;
+  }
+  .hero h2 { font-size: 2.5rem; }
+  .hero p { margin: 20px 0; font-size: 1.1rem; }
+  .btn {
+    background: #fff;
+    color: #00b894;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    display: inline-block;
+    margin-top: 10px;
+    transition: 0.3s;
+  }
+  .btn:hover { background: #dff; }
+
+  .section { padding: 60px 0; }
+  .section h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 2.2rem;
+    position: relative;
+    color: #00b894;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    animation: fadeInUp 0.7s ease-in-out both;
+  }
+  .section h2::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background: linear-gradient(90deg, #00b894, #0984e3);
+    margin: 10px auto 0;
+    border-radius: 5px;
+    transition: width 0.3s ease-in-out;
+  }
+  .section:hover h2::after { width: 100px; }
+
+  @keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(40px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .grid {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  }
+
+  .card, .blog-card {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    transition: 0.3s ease;
+    position: relative;
+    cursor: pointer;
+    color: inherit;
+  }
+  .card:hover, .blog-card:hover { transform: scale(1.02); }
+  .card h3, .blog-card h3 { color: #0984e3; margin-bottom: 10px; }
+  .card p, .blog-card p { font-size: 0.95rem; }
+  .card.active {
+    background-color: #e0f7fa;
+    border: 2px solid #00b894;
+    transform: scale(1.02);
+  }
+
+  .btn-small, .read-more {
+    margin-top: 10px;
+    display: inline-block;
+    background: #00b894;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    transition: 0.3s;
+  }
+  .btn-small:hover, .read-more:hover { background: #00997a; }
+
+  .blog-grid {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  }
+  .blog-card img {
+    width: 100%;
+    border-radius: 8px;
+    height: 160px;
+    object-fit: cover;
+  }
+
+  .about { text-align: center; background: #f1f1f1; }
+
+  footer {
+    background: #0a192f;
+    color: #fff;
+    padding: 40px 0;
+  }
+  .footer-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 30px;
+  }
+  footer h4 { margin-bottom: 10px; }
+  footer ul { list-style: none; }
+  footer ul li a { color: #fff; font-size: 0.95rem; }
+  .copyright {
+    text-align: center;
+    font-size: 0.9rem;
+    margin-top: 30px;
+    color: #ccc;
+  }
+
+  #scrollTopBtn, #scrollBottomBtn {
+    display: none;
+    position: fixed;
+    z-index: 99;
+    background-color: #00b894;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 18px;
+    transition: background 0.3s;
+  }
+
+  #scrollTopBtn { bottom: 30px; right: 20px; }
+  #scrollBottomBtn { bottom: 80px; right: 20px; }
+  #scrollTopBtn:hover, #scrollBottomBtn:hover { background-color: #00997a; }
+
+  @media (max-width: 768px) {
+    .menu-toggle { display: block; color: #fff; }
+    nav ul {
+      flex-direction: column;
+      width: 100%;
+      max-height: 0;
+      overflow: hidden;
+      background: #0a192f;
+    }
+    nav ul.show { max-height: 400px; }
+  }
+
+  .dark-mode { background-color: #121212; color: #f1f1f1; }
+  .dark-mode .card, .dark-mode .blog-card { background-color: #1e1e1e; color: #eaeaea; }
+  .dark-mode .card h3, .dark-mode .blog-card h3 { color: #00cec9; }
+  .dark-mode .hero { background-color: #00897b; color: #fff; }
+  .dark-mode .btn, .dark-mode .btn-small, .dark-mode .read-more { background-color: #00b894; color: white; }
+  .dark-mode footer { background-color: #0a192f; color: #fff; }
+
+  .toggle-btn {
+    margin: 1rem;
+    padding: 0.5rem 1rem;
+     background: linear-gradient(to right, #00d4b3, #00c3f7);
+    border: none;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+  .toggle-btn:hover { background-color: #00a68a; }
+  .dark-mode .toggle-btn { color: #121212; background-color: #00e6b8; }
+
+  .blog-header { display: flex; justify-content: flex-end; margin-bottom: 10px; }
+  nav a { color: white; text-decoration: none; font-weight: 600; transition: color 0.3s; }
+  nav a:hover { color: #00c9a7; }
+
+.social-links {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center both text and icons horizontally */
+  gap: 12px;
+  margin-left: 20px; /* Adjust as needed to shift right */
+  color: #fff;
+}
+
+.social-links h4 {
+  margin: 0;
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+}
+
+.social-icons a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background-color: #0f1e32;
+  transition: background-color 0.3s ease;
+}
+
+.social-icons a:hover {
+  background-color: #ffffff;
+}
+
+.icon {
+  width: 24px;
+  height: 24px;
+  fill: #ffffff;
+  transition: fill 0.3s ease;
+}
+
+.social-icons a:hover .icon {
+  fill: #0f1e32;
+}
+
+.social-links {
+  text-align: center;
+  padding-left: 10px;
+}
+
+</style>
+</head>
+<body>
+<script src="https://unpkg.com/scrollreveal"></script>
+
+  <header>
+    <div class="container nav">
+      <h1 class="logo">EarnSmartPK</h1>
+      <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+  <nav>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="Blog.html">Blog</a></li>
+    <li><a href="Services.html">Services</a></li>
+    <li><a href="Courses.html">Courses</a></li>
+    <li><a href="Notes.html">Notes</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+
+</nav>
+
+
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container">
+      <h2>Learn How to Earn Online in Pakistan</h2>
+      <p>Freelancing, blogging, affiliate marketing — all the real ways to earn online in Pakistan.</p>
+      <a href="Blog.html" class="btn">Start Reading</a>
+    </div>
+  </section>
+
+  <section class="section" id="blog">
+    <div class="container">
+    <div class="blog-header">
+      <button class="toggle-btn" onclick="toggleDarkMode()">Dark Mode</button>
+    </div>
+
+      <h2>Latest Blog Posts</h2>
+      <div class="blog-grid">
+        <div class="blog-card">
+          <img src="./images/pic3.jpg" alt="Fiverr Tips">
+          <h3>How to Get Your First Order on Fiverr</h3>
+          <p>Complete beginner guide to freelancing on Fiverr in 2025.</p>
+        </div>
+        <div class="blog-card">
+          <img src="./images/pic5.jpg" alt="Affiliate Programs">
+          <h3>Best Affiliate Programs for Pakistanis</h3>
+          <p>Daraz, Amazon, Fiverr — see which ones pay the most.</p>
+        </div>
+        <div class="blog-card">
+          <img src="./images/pic4.jpg" alt="Earning Apps">
+          <h3>10 Trusted Earning Apps in Pakistan</h3>
+          <p>Verified apps that really pay and how to use them effectively.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="services">
+    <div class="container">
+      <h2>My Freelance Services</h2>
+      <div class="grid">
+        <div class="card" onclick="toggleAndRedirect(this, 'freelance-services.html')">
+          <h3>Frontend Development</h3>
+          <p>HTML, CSS, JavaScript UI design tailored for your business needs.</p>
+          <a href="Services.html" class="read-more">Read More</a>
+        </div>
+        <div class="card" onclick="toggleAndRedirect(this, 'freelance-services.html')">
+          <h3>Backend Development</h3>
+          <p>PHP and MySQL based backend systems for secure, scalable applications.</p>
+          <a href="Services.html" class="read-more">Read More</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="courses">
+  <div class="container">
+    <h2>Courses I Offer</h2>
+    <div class="grid">
+      
+      <div class="card" onclick="toggleAndRedirect(this, 'courses.html')">
+        <img src="./images/pic6.jpg" alt="PHP Course" style="width: 100%; height: 180px; object-fit: cover; border-radius: 10px 10px 0 0;">
+        <h3>PHP</h3>
+        <p>Learn how to create gigs, get orders, and grow your freelance career on Fiverr.</p>
+        <a href="Courses.html" class="read-more">Read More</a>
+      </div>
+
+      <div class="card" onclick="toggleAndRedirect(this, 'courses.html')">
+        <img src="./images/pic7.png" alt="Blogging Mastery" style="width: 100%; height: 180px; object-fit: cover; border-radius: 10px 10px 0 0;">
+        <h3>Blogging Mastery</h3>
+        <p>Start your own blog and learn how to earn from AdSense and affiliate marketing.</p>
+        <a href="Courses.html" class="read-more">Read More</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+  <section class="section" id="notes">
+    <div class="container">
+      <h2>Free Notes & Guides</h2>
+      <div class="grid">
+        <div class="card">
+           <img src="./images/pic11.jpg" alt="PHP Course" style="width: 100%; height: 180px; object-fit: cover; border-radius: 10px 10px 0 0;">
+          <h3>Python Programming</h3>
+          <p>Downloadable guide covering Fiverr, Upwork, and earning tips in Pakistan.</p>
+          <a href="contact.html" class="btn-small">Read More</a>
+        </div>
+        <div class="card">
+           <img src="./images/pic16.jpeg" alt="PHP Course" style="width: 100%; height: 180px; object-fit: cover; border-radius: 10px 10px 0 0;">
+          <h3>Artificial Intelligence (AI)</h3>
+          <p>Step-by-step blog launch checklist to go from idea to live website.</p>
+          <a href="contact.html" class="btn-small">Read More</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <footer>
+    <div class="container footer-grid">
+      <div>
+        <h3>EarnSmartPK</h3>
+        <p>Helping Pakistanis earn smartly through real online opportunities.</p>
+      </div>
+      <div>
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="privacy-policy.html">Privacy Policy</a></li>
+          <li><a href="disclaimer.html">Disclaimer</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+
+<div class="social-links">
+  <h4>Follow Us</h4>
+  <div class="social-icons">
+    <a href="Your insta link" target="_blank" aria-label="Instagram">
+      <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 24 24">
+        <path d="M7 2C4.243 2 2 4.243 2 7v10c0 2.757 2.243 5 5 5h10c2.757 0 5-2.243 5-5V7c0-2.757-2.243-5-5-5H7zm0 2h10c1.654 0 3 1.346 3 3v10c0 1.654-1.346 3-3 3H7c-1.654 0-3-1.346-3-3V7c0-1.654 1.346-3 3-3zm5 2a5 5 0 100 10 5 5 0 000-10zm0 2a3 3 0 110 6 3 3 0 010-6zm4.5-.25a1.25 1.25 0 11-2.5 0 1.25 1.25 0 012.5 0z"/>
+      </svg>
+    </a>
+    <a href="Your linkdin link" target="_blank" aria-label="LinkedIn">
+      <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 24 24">
+        <path d="M19 0h-14c-2.8 0-5 2.2-5 5v14c0 2.8 2.2 5 5 5h14c2.8 0 5-2.2 5-5v-14c0-2.8-2.2-5-5-5zm-11 19h-3v-9h3v9zm-1.5-10.3c-1 0-1.8-.8-1.8-1.8s.8-1.8 1.8-1.8c1 0 1.8.8 1.8 1.8s-.8 1.8-1.8 1.8zm13.5 10.3h-3v-4.7c0-1.1-.4-1.9-1.5-1.9-.8 0-1.3.5-1.6 1-.1.2-.1.5-.1.7v4.9h-3v-9h3v1.2c.4-.7 1.3-1.7 3-1.7 2.2 0 3.8 1.5 3.8 4.6v4.9z"/>
+      </svg>
+    </a>
+    <a href="Your facebook link" target="_blank" aria-label="Facebook">
+      <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 24 24">
+        <path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 5 3.66 9.13 8.44 9.88v-6.99H8v-2.89h2.44v-2.21c0-2.4 1.44-3.72 3.62-3.72 1.05 0 2.15.19 2.15.19v2.37h-1.21c-1.19 0-1.56.74-1.56 1.49v1.88H16l-.48 2.89h-2.24v6.99C18.34 21.13 22 17 22 12z"/>
+      </svg>
+    </a>
+  </div>
+</div>
+
+
+    </div>
+    <p class="copyright">© 2025 EarnSmartPK. All Rights Reserved.</p>
+  </footer>
+
+  <button id="scrollTopBtn" onclick="scrollToTop()" title="Go to top">↑</button>
+  <button id="scrollBottomBtn" onclick="scrollToBottom()" title="Go to bottom">↓</button>
+
+
+  <script>
+    function toggleAndRedirect(el, url) {
+      document.querySelectorAll('.card').forEach(card => card.classList.remove('active'));
+      el.classList.add('active');
+      setTimeout(() => { window.location.href = url; }, 500);
+    }
+
+    function toggleMenu() {
+      const nav = document.getElementById('navLinks');
+      nav.classList.toggle('show');
+    }
+
+   window.onscroll = () => {
+  const scrollTopBtn = document.getElementById("scrollTopBtn");
+  const scrollBottomBtn = document.getElementById("scrollBottomBtn");
+
+  const scrolledFromTop = document.body.scrollTop || document.documentElement.scrollTop;
+  const scrolledFromBottom = document.documentElement.scrollHeight - window.innerHeight - scrolledFromTop;
+
+  scrollTopBtn.style.display = scrolledFromTop > 200 ? "block" : "none";
+  scrollBottomBtn.style.display = scrolledFromBottom > 200 ? "block" : "none";
+};
+
+
+    function scrollToTop() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function scrollToBottom() {
+  window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+}
+
+  </script>
+
+
+  <script>
+  function toggleDarkMode() {
+    document.body.classList.toggle('dark-mode');
+  }
+</script>
+
+  <script>
+  function toggleDarkMode() {
+    document.body.classList.toggle("dark-mode");
+
+    const btn = document.querySelector(".toggle-btn");
+    if (document.body.classList.contains("dark-mode")) {
+      btn.textContent = "Light Mode";
+    } else {
+      btn.textContent = "Dark Mode";
+    }
+  }
+</script>
+
+</body>
+</html>

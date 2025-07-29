@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Disclaimer - EarnSmartPK</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Inter', sans-serif;
+    }
+
+    body {
+      background-color: #f5f7fa;
+      color: #333;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    /* Navbar */
+    nav {
+      background-color: #0e1d36;
+      padding: 1rem 2rem;
+    }
+
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      color: white;
+      font-size: 1.4rem;
+      font-weight: bold;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+    }
+
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: #00bfa6;
+    }
+
+    .nav-toggle button {
+      background: linear-gradient(to right, #00d4b3, #00c3f7);
+      border: none;
+      color: white;
+      font-weight: bold;
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .nav-toggle button:hover {
+      opacity: 0.9;
+    }
+
+    /* Disclaimer Content */
+    .disclaimer-container {
+      max-width: 900px;
+      margin: 50px auto;
+      background: #fff;
+      padding: 40px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+    }
+
+    .disclaimer-container h1 {
+      font-size: 2rem;
+      color: #00bfa6;
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .section-title {
+      font-size: 1.4rem;
+      color: #0e1d36;
+      margin-top: 30px;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .disclaimer-container p {
+      font-size: 16px;
+      line-height: 1.7;
+      margin-bottom: 15px;
+      color: #555;
+    }
+
+    .disclaimer-container ul {
+      margin: 10px 0 20px 25px;
+    }
+
+    .disclaimer-container li {
+      margin-bottom: 8px;
+      color: #555;
+    }
+
+    /* SVG icons */
+    .icon {
+      width: 20px;
+      height: 20px;
+      fill: #00bfa6;
+      flex-shrink: 0;
+    }
+
+    /* Footer */
+    footer {
+      background-color: #0e1d36;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      font-size: 16px;
+      margin-top: auto;
+    }
+
+    /* Dark Mode */
+    body.dark-mode {
+      background-color: #121212;
+      color: #e0e0e0;
+    }
+
+    body.dark-mode nav {
+      background-color: #0a192f;
+    }
+
+    body.dark-mode .logo {
+      color: #fff;
+    }
+
+    body.dark-mode .nav-links a {
+      color: #e0e0e0;
+    }
+
+    body.dark-mode .nav-links a:hover {
+      color: #00c9a7;
+    }
+
+    body.dark-mode .disclaimer-container {
+      background-color: #1e1e1e;
+      color: #ccc;
+      box-shadow: 0 4px 8px rgba(255, 255, 255, 0.05);
+    }
+
+    body.dark-mode .section-title {
+      color: #e0e0e0;
+    }
+
+    body.dark-mode .disclaimer-container p,
+    body.dark-mode .disclaimer-container li {
+      color: #ccc;
+    }
+
+    body.dark-mode footer {
+      background-color: #0a192f;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Navbar -->
+  <nav>
+    <div class="nav-container">
+      <div class="logo">EarnSmartPK</div>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="Blog.html">Blog</a>
+        <a href="services.html">Services</a>
+        <a href="Courses.html">Courses</a>
+        <a href="Notes.html">Notes</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="nav-toggle">
+        <button onclick="toggleDarkMode()">Dark Mode</button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Disclaimer Content -->
+  <div class="disclaimer-container">
+    <h1>
+      <svg class="icon" viewBox="0 0 24 24">
+        <path d="M12 2L2 7h20L12 2zm0 2.18l6.16 3.09H5.84L12 4.18zM2 9v11h20V9H2zm2 2h16v7H4v-7z"/>
+      </svg>
+      Disclaimer
+    </h1>
+
+    <p>The information provided on <strong>EarnSmartPK</strong> is for general informational and educational purposes only. By using this website, you agree to this disclaimer.</p>
+
+    <h2 class="section-title">
+      <svg class="icon" viewBox="0 0 24 24">
+        <path d="M12 2a10 10 0 100 20 10 10 0 000-20zM11 10h2v6h-2v-6zm0-4h2v2h-2V6z"/>
+      </svg>
+      No Professional Advice
+    </h2>
+    <p>The content on this website is not intended to substitute for professional advice, including financial, legal, or technical advice. Always seek professional guidance before making decisions based on our content.</p>
+
+    <h2 class="section-title">
+      <svg class="icon" viewBox="0 0 24 24">
+        <path d="M21 11H6.83l5.59-5.59L11 4l-8 8 8 8 1.41-1.41L6.83 13H21v-2z"/>
+      </svg>
+      External Links
+    </h2>
+    <p>Our website may contain links to external sites. We do not control or endorse the content, products, or services on these third-party websites. Clicking on external links is at your own risk.</p>
+
+    <h2 class="section-title">
+      <svg class="icon" viewBox="0 0 24 24">
+        <path d="M12 17a2 2 0 100-4 2 2 0 000 4zm0-14a7 7 0 00-7 7c0 3.53 2.61 6.43 6 6.92V21h2v-4.08c3.39-.49 6-3.39 6-6.92a7 7 0 00-7-7z"/>
+      </svg>
+      Limitation of Liability
+    </h2>
+    <p>We are not responsible for any losses, damages, or issues arising from the use of this website or its content. Use the site at your own risk.</p>
+
+    <h2 class="section-title">
+      <svg class="icon" viewBox="0 0 24 24">
+        <path d="M12 22c5.52 0 10-4.48 10-10S17.52 2 12 2 2 6.48 2 12s4.48 10 10 10zm0-2a8 8 0 100-16 8 8 0 000 16z"/>
+      </svg>
+      Contact
+    </h2>
+    <p>If you have questions about this disclaimer, contact us at: <strong>support@earnsmartpk.com</strong>.</p>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 EarnSmartPK. All rights reserved.</p>
+  </footer>
+
+  <script>
+    function toggleDarkMode() {
+      document.body.classList.toggle("dark-mode");
+      const btn = document.querySelector(".nav-toggle button");
+      btn.textContent = document.body.classList.contains("dark-mode") ? "Light Mode" : "Dark Mode";
+    }
+  </script>
+</body>
+</html>
